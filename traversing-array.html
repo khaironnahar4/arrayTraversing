@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Traversing and Accessing</title>
+    <script>
+        //Array traversing
+        let array = [3,45,23,65,98,3,2];
+        for(let i=0; i<array.length; i++){
+            console.log(` ${array[i]}`);
+        }
+        //Get index of the element
+        function getIndex(){
+            var element = document.getElementById('element').value;
+            element = parseInt(element);
+            let t=0;
+            for(let j=0; j<array.length; j++){
+                if(element===array[j]){
+                    console.log(`The index number of the element is ${j}`);
+                    t=1;
+                    break;
+                }
+            }
+            if(!t){
+                console.log('The element is not in the array');
+            }
+        } 
+        
+        //Get Element of the index number
+        function getElement(){
+            var index = document.getElementById('index').value;
+            index = parseInt(index);
+            if(index<array.length){
+                console.log(`The element is ${array[index]}`)
+            }else{
+                console.log('Please enter a valid index');
+            }
+            
+        }
+    </script>
+
+</head>
+<body>
+    <div style="margin: auto; width: 300px;">
+        <div>
+            <h3>Please enter an element</h3>
+            <input type="text" id="element">
+            <button onclick="getIndex()">Get Index</button>
+        </div>
+        <br>
+        <div>
+            <h3>Please enter the index number</h3>
+            <input type="text" id="index">
+            <button onclick="getElement()">Get Element</button>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
